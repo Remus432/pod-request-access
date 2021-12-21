@@ -24,7 +24,6 @@
 		height: 100vh;
 		justify-content: center;
 		padding: 6.2rem 2.4rem 9.2rem 2.4rem;
-		width: 100vw;
 
 		.logo {
 			margin-bottom: 5.7rem;
