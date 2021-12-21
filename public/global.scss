@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Chivo', sans-serif;
+  font-size: 1.8rem;
+}
+
