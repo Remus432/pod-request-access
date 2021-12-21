@@ -1,4 +1,4 @@
-<form class="req-access">
+<form on:submit|preventDefault class="req-access">
   <input class="req-access__email" type="email" placeholder="Email address" />
   <button class="req-access__btn" type="submit">Request Access</button>
 </form>
@@ -34,6 +34,7 @@
       border: none;
       border-radius: 2.8rem;
       color: $color-bg;
+      cursor: pointer;
       font-weight: 700;
       padding: 1.4rem 3.2rem;
     }
