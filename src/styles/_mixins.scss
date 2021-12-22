@@ -1,0 +1,23 @@
+@mixin respond($screen) {
+  @if $screen == tab {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $screen == desktop {
+    @media (min-width: 1440px) {
+      @content;
+    }
+  }
+}
+
+@mixin transitionOverlay {
+  background-color: $color-bg;
+  content: "";
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}

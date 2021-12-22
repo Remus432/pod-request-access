@@ -18,7 +18,16 @@ html {
 }
 
 body {
+  background-color: #121725;
   font-family: 'Chivo', sans-serif;
   font-size: 1.8rem;
+}
+
+@media (min-width: 1366px) {
+  body {
+    padding: 2rem 0;
+    padding-left: 10rem;
+    overflow: hidden;
+  }
 }
 

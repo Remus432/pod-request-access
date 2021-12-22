@@ -21,14 +21,22 @@
 
 <style lang="scss">
   @import "../styles/variables";
+  @import "../styles/mixins";
+  @import "../styles/animations";
 
   .pod {
+    z-index: 2;
+
     &__headline {
       color: $color-primary;
       font-size: 2.6rem;
       text-align: center;
       text-transform: uppercase;
       line-height: 3.8rem;
+
+      span {
+        color: $color-white;
+      }
     }
 
     &__description {
@@ -47,6 +55,76 @@
 
       .pod__icon {
         width: 6rem;
+      }
+    }
+
+    @include respond(tab) {
+      align-items: flex-start;
+      background-color: $color-bg;
+      display: flex;
+      flex-direction: column;
+      padding-top: 9.3rem;
+
+      &__headline {
+        font-size: 4.8rem;
+        line-height: 5.6rem;
+        position: relative;
+        text-align: left;
+      }
+
+      &__description {
+        text-align: left;
+        width: 60%;
+      }
+
+      &__icon-group {
+        margin-top: 6.4rem;
+        order: 2;
+
+        .pod__icon {
+          width: 10rem;
+
+          &:not(:last-of-type) {
+            margin-right: 4rem;
+          }
+        }
+      }
+    }
+
+    @include respond(desktop) {
+      max-width: 50%;
+
+      &__headline {
+        animation: textZoomIn 1s forwards ease-in-out;
+
+        &::after {
+          animation: slideReveal 1.2s forwards ease;
+          @include transitionOverlay;
+        }
+      }
+
+      &__description {
+        animation: textZoomIn 1s forwards ease-in-out;
+        
+        &::after {
+          animation: slideReveal 1s forwards .5s ease;
+          @include transitionOverlay;
+        }
+      }
+
+      &__icon {
+        &:nth-of-type(1) {
+          animation: fadeInUp .8s backwards .4s ease-in-out;
+        }
+        &:nth-of-type(2) {
+          animation: fadeInUp .8s backwards .8s ease-in-out;
+        }
+        &:nth-of-type(3) {
+          animation: fadeInUp .8s backwards 1.2s ease-in-out;
+        }
+        &:nth-of-type(4) {
+          animation: fadeInUp .8s backwards 1.6s ease-in-out;
+        }
       }
     }
   }
